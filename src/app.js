@@ -1,7 +1,7 @@
 const onxrloaded = () => {
   XR8.XrController.configure({
     imageTargetData: [
-      require('../image-targets/pagina4.json')
+      require('../image-targets/Compaginado4.json')
     ],
   })
 }
