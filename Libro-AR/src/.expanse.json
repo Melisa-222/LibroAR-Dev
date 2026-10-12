@@ -50,7 +50,7 @@
       },
       "name": "Box",
       "position": [
-        0,
+        3.1748747950633485,
         0.5,
         0
       ],
@@ -129,6 +129,67 @@
       ],
       "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
       "order": 0.6644431107322474
+    },
+    "e426ba8c-b1b2-43d4-b0af-20d46fad05b2": {
+      "id": "e426ba8c-b1b2-43d4-b0af-20d46fad05b2",
+      "position": [
+        0.29300731339702135,
+        0.4215233831893333,
+        1.9078500783598176
+      ],
+      "rotation": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "name": "Objetivo de la imagen",
+      "imageTarget": {
+        "name": "Pagina4"
+      },
+      "order": 3.2870449818731515
+    },
+    "a1f1c536-589f-4a07-8e9f-bea8f93e728e": {
+      "id": "a1f1c536-589f-4a07-8e9f-bea8f93e728e",
+      "position": [
+        0,
+        0.485559284734169,
+        1.7537936502281164
+      ],
+      "rotation": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        -0.10111517720232314,
+        0.10111517720232314,
+        0.10111517720232314
+      ],
+      "geometry": {
+        "type": "box",
+        "depth": 1,
+        "height": 1,
+        "width": 1
+      },
+      "material": {
+        "type": "basic",
+        "color": "#FFFFFF"
+      },
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "name": "Caja",
+      "order": 4.656572027919259
     }
   },
   "spaces": {
