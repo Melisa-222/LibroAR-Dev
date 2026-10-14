@@ -125,20 +125,6 @@ const attach = (mesh: EffectMesh): Binding => {
   return {mesh, effect, uniforms}
 }
 
-// Global one-time listener to guarantee mobile browser playback on first user touch if blocked
-if (typeof window !== 'undefined' && !(window as any).__arVideoAutoPlayInit) {
-  ;(window as any).__arVideoAutoPlayInit = true
-  const tryPlayAll = () => {
-    document.querySelectorAll('video').forEach((v) => {
-      v.muted = true
-      v.playsInline = true
-      v.loop = true
-      v.play().catch(() => {})
-    })
-  }
-  window.addEventListener('touchstart', tryPlayAll, {passive: true, once: true})
-  window.addEventListener('click', tryPlayAll, {passive: true, once: true})
-}
 
 ecs.registerComponent({
   name: 'Chroma Key',
@@ -224,22 +210,14 @@ ecs.registerComponent({
         media?.tagName === 'VIDEO'
       )
 
-      // Automatic video playback without button + no black frame
+      // Automatic video playback — just ensure it plays, muted and inline
       if (isVideo && media instanceof HTMLVideoElement) {
         if (!media.muted) media.muted = true
         if (!media.playsInline) media.playsInline = true
-        if (!media.loop) media.loop = true
 
         if (media.paused) {
           media.play().catch(() => {})
         }
-
-        // Hide mesh until first real video frame is decoded to prevent any black rectangle
-        if (media.readyState < 2 || media.currentTime === 0) {
-          mesh.visible = false
-          return
-        }
-        mesh.visible = true
       }
 
       if (!binding) {

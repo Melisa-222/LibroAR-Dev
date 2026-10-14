@@ -221,7 +221,8 @@
         }
       },
       "name": "aves",
-      "order": 4.026492331636372
+      "order": 4.026492331636372,
+      "videoControls": {}
     }
   },
   "spaces": {
