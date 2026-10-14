@@ -117,7 +117,13 @@
       "imageTarget": {
         "name": "Compaginado4"
       },
-      "order": 2.6887645864081633
+      "order": 2.6887645864081633,
+      "audio": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/pag_4.mp3"
+        }
+      }
     },
     "8df8272a-697d-4c6e-8882-9cd91fcd89e1": {
       "id": "8df8272a-697d-4c6e-8882-9cd91fcd89e1",
@@ -215,8 +221,7 @@
         }
       },
       "name": "aves",
-      "order": 4.026492331636372,
-      "videoControls": {}
+      "order": 4.026492331636372
     }
   },
   "spaces": {
