@@ -119,38 +119,103 @@
       },
       "order": 2.6887645864081633
     },
-    "278c3fd2-9eb7-4d54-8709-2833dc54dcae": {
-      "id": "278c3fd2-9eb7-4d54-8709-2833dc54dcae",
+    "8df8272a-697d-4c6e-8882-9cd91fcd89e1": {
+      "id": "8df8272a-697d-4c6e-8882-9cd91fcd89e1",
       "position": [
-        0,
-        0.03553228908049643,
-        -0.2243540181796568
+        0.12101189427097866,
+        0.004044808003658251,
+        0.017959509476964838
       ],
       "rotation": [
+        -0.7071067999999994,
         0,
         0,
-        0,
-        0.9999999999999998
+        0.7071067623730952
       ],
       "scale": [
-        0.05284179713970816,
-        0.05284179713970816,
-        0.05284179713970816
+        0.6776895163871351,
+        0.6776895524486763,
+        0.6776895524486763
       ],
       "geometry": {
-        "type": "box",
-        "depth": 1,
-        "height": 1,
-        "width": 1
+        "type": "plane",
+        "width": 1,
+        "height": 1
       },
       "material": {
         "type": "basic",
-        "color": "#FFFFFF"
+        "color": "#FFFFFF",
+        "textureSrc": {
+          "type": "asset",
+          "asset": "assets/semillas_volando.mp4"
+        }
       },
       "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
-      "components": {},
-      "name": "Caja",
-      "order": 4.292622970590995
+      "components": {
+        "e17b8b5f-368a-47d4-865e-b026e2091f08": {
+          "id": "e17b8b5f-368a-47d4-865e-b026e2091f08",
+          "name": "Chroma Key",
+          "parameters": {
+            "keyRed": 85,
+            "keyGreen": 166,
+            "keyBlue": 62,
+            "softness": 0.05,
+            "tolerance": 0.09,
+            "enabled": true
+          }
+        }
+      },
+      "name": "Plano",
+      "order": 4.556224578947632,
+      "videoControls": {}
+    },
+    "b704a268-9d57-4b24-859c-8ea819799b85": {
+      "id": "b704a268-9d57-4b24-859c-8ea819799b85",
+      "position": [
+        0.06481545283301116,
+        0.1760478163302882,
+        0
+      ],
+      "rotation": [
+        -0.707106799999999,
+        0,
+        0,
+        0.7071067623730954
+      ],
+      "scale": [
+        1,
+        1.0000000532124818,
+        1.0000000532124818
+      ],
+      "geometry": {
+        "type": "plane",
+        "width": 1,
+        "height": 1
+      },
+      "material": {
+        "type": "basic",
+        "color": "#FFFFFF",
+        "textureSrc": {
+          "type": "asset",
+          "asset": "assets/aves.mp4"
+        }
+      },
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {
+        "2626c623-27db-4ecd-8af9-4a0aa0b6db27": {
+          "id": "2626c623-27db-4ecd-8af9-4a0aa0b6db27",
+          "name": "Chroma Key",
+          "parameters": {
+            "keyRed": 85,
+            "keyGreen": 166,
+            "keyBlue": 62,
+            "tolerance": 0.09,
+            "softness": 0.05
+          }
+        }
+      },
+      "name": "Plano (1)",
+      "order": 5.681648048078999
     }
   },
   "spaces": {
