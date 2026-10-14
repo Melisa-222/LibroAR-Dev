@@ -43,7 +43,15 @@ const CHROMA_FRAGMENT = `
 #ifdef USE_MAP
   // For video textures, sampledDiffuseColor is already sRGB.
   // Only convert from linear if it's an sRGB image texture.
-  vec3 chromaSample = (chromaIsVideo > 0.5) ? sampledDiffuseColor.rgb : chromaLinearToSrgb(sampledDiffuseColor.rgb);
+  vec3 chromaSample = sampledDiffuseColor.rgb;
+  if (chromaIsVideo < 0.5) {
+    chromaSample = chromaLinearToSrgb(sampledDiffuseColor.rgb);
+  }
+  // Discard empty/uninitialized video texture pixels so no black rectangle can ever appear
+  if (chromaIsVideo > 0.5 && chromaSample.r < 0.005 && chromaSample.g < 0.005 && chromaSample.b < 0.005) {
+    discard;
+  }
+
   vec2 sampleUv = chromaUv(chromaSample);
   vec2 keyUv = chromaUv(chromaKeyColor);
   float chromaDistance = distance(sampleUv, keyUv);
@@ -104,12 +112,35 @@ const attach = (mesh: EffectMesh): Binding => {
     properties: {transparent: true, depthWrite: false},
     compile: (shader) => {
       Object.assign(shader.uniforms, uniforms)
-      shader.fragmentShader = CHROMA_FUNCTIONS + shader.fragmentShader.replace(
+      if (shader.fragmentShader.indexOf('#include <common>') !== -1) {
+        shader.fragmentShader = shader.fragmentShader.replace(
+          '#include <common>',
+          '#include <common>\n' + CHROMA_FUNCTIONS
+        )
+      } else {
+        shader.fragmentShader = CHROMA_FUNCTIONS + shader.fragmentShader
+      }
+      shader.fragmentShader = shader.fragmentShader.replace(
         '#include <map_fragment>', CHROMA_FRAGMENT
       )
     },
   }
   return {mesh, effect, uniforms}
+}
+
+// Global one-time listener to guarantee mobile browser playback on first user touch if blocked
+if (typeof window !== 'undefined' && !(window as any).__arVideoAutoPlayInit) {
+  ;(window as any).__arVideoAutoPlayInit = true
+  const tryPlayAll = () => {
+    document.querySelectorAll('video').forEach((v) => {
+      v.muted = true
+      v.playsInline = true
+      v.loop = true
+      v.play().catch(() => {})
+    })
+  }
+  window.addEventListener('touchstart', tryPlayAll, {passive: true, once: true})
+  window.addEventListener('click', tryPlayAll, {passive: true, once: true})
 }
 
 ecs.registerComponent({
@@ -152,62 +183,85 @@ ecs.registerComponent({
   },
 
   tick: (world, {eid, schema}) => {
-    let instances = bindings.get(world)
-    if (!instances) {
-      instances = new Map()
-      bindings.set(world, instances)
-    }
+    try {
+      let instances = bindings.get(world)
+      if (!instances) {
+        instances = new Map()
+        bindings.set(world, instances)
+      }
 
-    if (!schema.enabled) {
-      release(instances, eid)
-      return
-    }
+      if (!schema.enabled) {
+        release(instances, eid)
+        return
+      }
 
-    const object = world.three.entityToObject.get(eid) as any
-    let mesh: EffectMesh | undefined
-    if (object?.isMesh) {
-      mesh = object as EffectMesh
-    } else if (object) {
-      object.traverse?.((child: any) => {
-        if (!mesh && child.isMesh && child.material?.map) {
-          mesh = child as EffectMesh
+      const object = world.three.entityToObject.get(eid) as any
+      let mesh: EffectMesh | undefined
+      if (object?.isMesh) {
+        mesh = object as EffectMesh
+      } else if (object) {
+        object.traverse?.((child: any) => {
+          if (!mesh && child.isMesh && child.material?.map) {
+            mesh = child as EffectMesh
+          }
+        })
+      }
+
+      let binding = instances.get(eid)
+
+      if (binding && binding.mesh !== mesh) {
+        release(instances, eid)
+        binding = undefined
+      }
+
+      // Retry on subsequent frames while the entity or texture is loading.
+      if (!mesh?.isMesh || !mesh.material || Array.isArray(mesh.material) || !mesh.material.map) {
+        release(instances, eid)
+        return
+      }
+
+      const media = (mesh.material as any).map?.image
+      const isVideo = Boolean(
+        (mesh.material as any).map?.isVideoTexture ||
+        media instanceof HTMLVideoElement ||
+        media?.tagName === 'VIDEO'
+      )
+
+      // Automatic video playback without button + no black frame
+      if (isVideo && media instanceof HTMLVideoElement) {
+        if (!media.muted) media.muted = true
+        if (!media.playsInline) media.playsInline = true
+        if (!media.loop) media.loop = true
+
+        if (media.paused) {
+          media.play().catch(() => {})
         }
-      })
+
+        // Hide mesh until first real video frame is decoded to prevent any black rectangle
+        if (media.readyState < 2 || media.currentTime === 0) {
+          mesh.visible = false
+          return
+        }
+        mesh.visible = true
+      }
+
+      if (!binding) {
+        binding = attach(mesh)
+        instances.set(eid, binding)
+      }
+      setMaterialEffect(mesh, 'chroma-key', binding.effect)
+
+      const {uniforms} = binding
+      uniforms.chromaIsVideo.value = isVideo ? 1.0 : 0.0
+      uniforms.chromaKeyColor.value[0] = schema.keyRed / 255
+      uniforms.chromaKeyColor.value[1] = schema.keyGreen / 255
+      uniforms.chromaKeyColor.value[2] = schema.keyBlue / 255
+      uniforms.chromaTolerance.value = Math.max(0, Math.min(1, schema.tolerance))
+      // Avoid undefined smoothstep behavior when both edges are equal.
+      uniforms.chromaSoftness.value = Math.max(0.0001, Math.min(1, schema.softness))
+    } catch (err) {
+      console.warn('ChromaKey tick warning:', err)
     }
-
-    let binding = instances.get(eid)
-
-    if (binding && binding.mesh !== mesh) {
-      release(instances, eid)
-      binding = undefined
-    }
-
-    // Retry on subsequent frames while the entity or texture is loading.
-    if (!mesh?.isMesh || !mesh.material || Array.isArray(mesh.material) || !mesh.material.map) {
-      release(instances, eid)
-      return
-    }
-
-    if (!binding) {
-      binding = attach(mesh)
-      instances.set(eid, binding)
-    }
-    setMaterialEffect(mesh, 'chroma-key', binding.effect)
-
-    const isVideo = Boolean(
-      (mesh.material as any).map?.isVideoTexture ||
-      (mesh.material as any).map?.image instanceof HTMLVideoElement ||
-      (mesh.material as any).map?.image?.tagName === 'VIDEO'
-    )
-
-    const {uniforms} = binding
-    uniforms.chromaIsVideo.value = isVideo ? 1.0 : 0.0
-    uniforms.chromaKeyColor.value[0] = schema.keyRed / 255
-    uniforms.chromaKeyColor.value[1] = schema.keyGreen / 255
-    uniforms.chromaKeyColor.value[2] = schema.keyBlue / 255
-    uniforms.chromaTolerance.value = Math.max(0, Math.min(1, schema.tolerance))
-    // Avoid undefined smoothstep behavior when both edges are equal.
-    uniforms.chromaSoftness.value = Math.max(0.0001, Math.min(1, schema.softness))
   },
 
   remove: (world, {eid}) => {

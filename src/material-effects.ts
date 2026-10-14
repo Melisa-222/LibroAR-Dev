@@ -19,6 +19,7 @@ export type EffectMaterial = {
 }
 export type EffectMesh = {
   isMesh?: boolean
+  visible?: boolean
   material: EffectMaterial | EffectMaterial[]
   onBeforeRender: (...args: unknown[]) => void
 }
@@ -70,38 +71,42 @@ const cloneMaterial = (binding: Binding, original: EffectMaterial) => {
 }
 
 export const setMaterialEffect = (mesh: EffectMesh, id: string, effect: MaterialEffect) => {
-  if (!mesh.material || Array.isArray(mesh.material)) return
-  let binding = bindings.get(mesh)
-  if (!binding) {
-    const originalBeforeRender = mesh.onBeforeRender
-    binding = {
-      original: mesh.material,
-      material: mesh.material,
-      effects: new Map([[id, effect]]),
-      overridden: new Set(),
-      originalBeforeRender,
-      beforeRender: (...args) => {
-        originalBeforeRender?.apply(mesh, args)
-        for (const item of binding.effects.values()) item.beforeRender?.(args[2])
-      },
+  try {
+    if (!mesh.material || Array.isArray(mesh.material)) return
+    let binding = bindings.get(mesh)
+    if (!binding) {
+      const originalBeforeRender = mesh.onBeforeRender
+      binding = {
+        original: mesh.material,
+        material: mesh.material,
+        effects: new Map([[id, effect]]),
+        overridden: new Set(),
+        originalBeforeRender,
+        beforeRender: (...args) => {
+          originalBeforeRender?.apply(mesh, args)
+          for (const item of binding.effects.values()) item.beforeRender?.(args[2])
+        },
+      }
+      cloneMaterial(binding, mesh.material)
+      bindings.set(mesh, binding)
+      mesh.material = binding.material
+      mesh.onBeforeRender = binding.beforeRender
+      return
     }
-    cloneMaterial(binding, mesh.material)
-    bindings.set(mesh, binding)
-    mesh.material = binding.material
-    mesh.onBeforeRender = binding.beforeRender
-    return
-  }
 
-  // ECS replaces materials when textures or Inspector settings change.
-  if (mesh.material !== binding.material) {
-    binding.material.dispose()
-    cloneMaterial(binding, mesh.material)
-    mesh.material = binding.material
-  }
-  if (binding.effects.get(id) !== effect) {
-    binding.effects.set(id, effect)
-    applyProperties(binding)
-    binding.material.needsUpdate = true
+    // ECS replaces materials when textures or Inspector settings change.
+    if (mesh.material !== binding.material) {
+      binding.material.dispose()
+      cloneMaterial(binding, mesh.material)
+      mesh.material = binding.material
+    }
+    if (binding.effects.get(id) !== effect) {
+      binding.effects.set(id, effect)
+      applyProperties(binding)
+      binding.material.needsUpdate = true
+    }
+  } catch (err) {
+    console.warn('setMaterialEffect warning:', err)
   }
 }
 
