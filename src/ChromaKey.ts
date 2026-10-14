@@ -47,10 +47,7 @@ const CHROMA_FRAGMENT = `
   if (chromaIsVideo < 0.5) {
     chromaSample = chromaLinearToSrgb(sampledDiffuseColor.rgb);
   }
-  // Discard empty/uninitialized video texture pixels so no black rectangle can ever appear
-  if (chromaIsVideo > 0.5 && chromaSample.r < 0.005 && chromaSample.g < 0.005 && chromaSample.b < 0.005) {
-    discard;
-  }
+
 
   vec2 sampleUv = chromaUv(chromaSample);
   vec2 keyUv = chromaUv(chromaKeyColor);
