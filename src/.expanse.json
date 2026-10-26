@@ -112,18 +112,24 @@
       "geometry": null,
       "material": null,
       "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
-      "components": {},
-      "name": "Objetivo de la imagen",
+      "components": {
+        "a00204a6-e3e6-4f03-9e33-02fb7175ad4a": {
+          "id": "a00204a6-e3e6-4f03-9e33-02fb7175ad4a",
+          "name": "Image Target Audio",
+          "parameters": {
+            "audioEntity": {
+              "type": "entity",
+              "id": "59783ccc-7dda-4a02-9131-28ea1151c0ba"
+            },
+            "enabled": false
+          }
+        }
+      },
+      "name": "Doble pagina 4",
       "imageTarget": {
         "name": "Compaginado4"
       },
-      "order": 2.6887645864081633,
-      "audio": {
-        "src": {
-          "type": "asset",
-          "asset": "assets/pag_4.mp3"
-        }
-      }
+      "order": 2.6887645864081633
     },
     "8df8272a-697d-4c6e-8882-9cd91fcd89e1": {
       "id": "8df8272a-697d-4c6e-8882-9cd91fcd89e1",
@@ -169,6 +175,16 @@
             "tolerance": 0.09,
             "enabled": true
           }
+        },
+        "c1b78cc7-9f23-4b0a-9426-45c9f9f1f841": {
+          "id": "c1b78cc7-9f23-4b0a-9426-45c9f9f1f841",
+          "name": "Video Toggle Button",
+          "parameters": {
+            "videoEntity": {
+              "type": "entity",
+              "id": "8df8272a-697d-4c6e-8882-9cd91fcd89e1"
+            }
+          }
         }
       },
       "name": "semillas",
@@ -179,8 +195,8 @@
       "id": "b704a268-9d57-4b24-859c-8ea819799b85",
       "position": [
         0.0041024322049242334,
-        5.221592371008249e-18,
-        0.023515961456353374
+        3.8399266183610355e-17,
+        0.17293492087580808
       ],
       "rotation": [
         0,
@@ -223,6 +239,38 @@
       "name": "aves",
       "order": 4.026492331636372,
       "videoControls": {}
+    },
+    "59783ccc-7dda-4a02-9131-28ea1151c0ba": {
+      "id": "59783ccc-7dda-4a02-9131-28ea1151c0ba",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "f4aa9408-c9ec-471a-873e-b641f9bc1f68",
+      "components": {},
+      "name": "Audio",
+      "order": 5.605253645946038,
+      "audio": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/pag_4.mp3"
+        },
+        "paused": true
+      }
     }
   },
   "spaces": {
