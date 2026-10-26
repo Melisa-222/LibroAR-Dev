@@ -113,15 +113,19 @@
       "material": null,
       "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
       "components": {
-        "a00204a6-e3e6-4f03-9e33-02fb7175ad4a": {
-          "id": "a00204a6-e3e6-4f03-9e33-02fb7175ad4a",
+        "1a3f2230-7064-490d-beea-3121d46b357d": {
+          "id": "1a3f2230-7064-490d-beea-3121d46b357d",
           "name": "Image Target Audio",
           "parameters": {
             "audioEntity": {
               "type": "entity",
               "id": "59783ccc-7dda-4a02-9131-28ea1151c0ba"
             },
-            "enabled": true
+            "loop": false,
+            "imageTarget": {
+              "type": "entity",
+              "id": "f4aa9408-c9ec-471a-873e-b641f9bc1f68"
+            }
           }
         }
       },
