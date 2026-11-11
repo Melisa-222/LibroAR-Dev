@@ -1,0 +1,23 @@
+{
+  "type": "PLANAR",
+  "properties": {
+    "top": 573,
+    "left": 0,
+    "width": 2252,
+    "height": 3002,
+    "isRotated": true,
+    "originalWidth": 2252,
+    "originalHeight": 4150
+  },
+  "imagePath": "image-targets/Compaginado7_luminance.jpg",
+  "metadata": null,
+  "name": "Compaginado7",
+  "resources": {
+    "originalImage": "Compaginado7_original.jpg",
+    "croppedImage": "Compaginado7_cropped.jpg",
+    "thumbnailImage": "Compaginado7_thumbnail.jpg",
+    "luminanceImage": "Compaginado7_luminance.jpg"
+  },
+  "created": 1794403921683,
+  "updated": 1794403921683
+}

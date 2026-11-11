@@ -44,12 +44,12 @@
       "material": null,
       "name": "Camera",
       "position": [
-        0,
+        1.258755672854021,
         2,
-        3
+        3.5055058454781958
       ],
       "rotation": [
-        0.0004436887233141012,
+        0.00044368872331410124,
         0.9659425615285845,
         -0.25875089860082223,
         0.0016563336561801576
@@ -95,7 +95,7 @@
       "id": "f4aa9408-c9ec-471a-873e-b641f9bc1f68",
       "position": [
         0,
-        0,
+        -0.060429364471841135,
         0
       ],
       "rotation": [
@@ -125,7 +125,8 @@
             "imageTarget": {
               "type": "entity",
               "id": "f4aa9408-c9ec-471a-873e-b641f9bc1f68"
-            }
+            },
+            "volume": 1
           }
         }
       },
@@ -139,8 +140,8 @@
       "id": "8df8272a-697d-4c6e-8882-9cd91fcd89e1",
       "position": [
         0,
-        1.0748582571937426e-17,
-        0.0484073124657384
+        4.813519294342355e-18,
+        0.021678163700340924
       ],
       "rotation": [
         0,
@@ -163,7 +164,7 @@
         "color": "#FFFFFF",
         "textureSrc": {
           "type": "asset",
-          "asset": "assets/semillas_volando.mp4"
+          "asset": "assets/Videos/semillas_volando.mp4"
         }
       },
       "parentId": "f4aa9408-c9ec-471a-873e-b641f9bc1f68",
@@ -192,25 +193,26 @@
         }
       },
       "name": "semillas",
-      "order": 2.30543650483906,
-      "videoControls": {}
+      "order": 10.186304568392904,
+      "videoControls": {},
+      "hidden": false
     },
     "b704a268-9d57-4b24-859c-8ea819799b85": {
       "id": "b704a268-9d57-4b24-859c-8ea819799b85",
       "position": [
         0.0041024322049242334,
-        3.8399266183610355e-17,
-        0.17293492087580808
+        1.1069542195688816e-17,
+        0.049852786107666136
       ],
       "rotation": [
-        0,
+        4.2592734574970064e-18,
         0,
         0,
         1
       ],
       "scale": [
         1,
-        1.0000000532124818,
+        0.7587214367890069,
         1.0000000532124818
       ],
       "geometry": {
@@ -223,7 +225,7 @@
         "color": "#FFFFFF",
         "textureSrc": {
           "type": "asset",
-          "asset": "assets/aves.mp4"
+          "asset": "assets/Videos/aves.mp4"
         }
       },
       "parentId": "f4aa9408-c9ec-471a-873e-b641f9bc1f68",
@@ -241,8 +243,9 @@
         }
       },
       "name": "aves",
-      "order": 4.026492331636372,
-      "videoControls": {}
+      "order": 7.350760802405612,
+      "videoControls": {},
+      "hidden": false
     },
     "59783ccc-7dda-4a02-9131-28ea1151c0ba": {
       "id": "59783ccc-7dda-4a02-9131-28ea1151c0ba",
@@ -266,15 +269,966 @@
       "material": null,
       "parentId": "f4aa9408-c9ec-471a-873e-b641f9bc1f68",
       "components": {},
-      "name": "Audio",
+      "name": "Audio 4",
       "order": 5.605253645946038,
       "audio": {
         "src": {
           "type": "asset",
-          "asset": "assets/pag_4.mp3"
+          "asset": "assets/Audios/pag_4.mp3"
         },
         "paused": true
       }
+    },
+    "3e10c20e-561b-47bd-97ec-5b6c3e9493e2": {
+      "id": "3e10c20e-561b-47bd-97ec-5b6c3e9493e2",
+      "position": [
+        1.0667450742061204,
+        0.00040346686923886654,
+        -1.2192529774455556
+      ],
+      "rotation": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {
+        "672b2d1e-f0a5-41aa-b1a6-84c290c53cf5": {
+          "id": "672b2d1e-f0a5-41aa-b1a6-84c290c53cf5",
+          "name": "Image Target Audio",
+          "parameters": {
+            "audioEntity": {
+              "type": "entity",
+              "id": "0b3cfe50-745a-4288-a86c-4d195b26f2ea"
+            },
+            "loop": false,
+            "volume": 1
+          }
+        }
+      },
+      "name": "Doble pagina 2",
+      "imageTarget": {
+        "name": "Compaginado2"
+      },
+      "order": 4.496630531938865
+    },
+    "75f7ad06-a936-48de-8023-595e1b5e8c56": {
+      "id": "75f7ad06-a936-48de-8023-595e1b5e8c56",
+      "position": [
+        0.04670590544203934,
+        0.02899108751114654,
+        0.04732459246256262
+      ],
+      "rotation": [
+        -2.660623932282392e-8,
+        0,
+        0,
+        0.9999999999999997
+      ],
+      "scale": [
+        0.8157370083506003,
+        0.5435077601342446,
+        0.5435077601342446
+      ],
+      "geometry": {
+        "type": "plane",
+        "width": 1,
+        "height": 1
+      },
+      "material": {
+        "type": "basic",
+        "color": "#FFFFFF",
+        "textureSrc": {
+          "type": "asset",
+          "asset": "assets/Videos/gotas_negro.mp4"
+        }
+      },
+      "parentId": "3e10c20e-561b-47bd-97ec-5b6c3e9493e2",
+      "components": {
+        "2a410e4b-c0fb-4ce3-b2be-5b5ad0d32de9": {
+          "id": "2a410e4b-c0fb-4ce3-b2be-5b5ad0d32de9",
+          "name": "Chroma Key",
+          "parameters": {
+            "keyRed": 18,
+            "keyGreen": 18,
+            "keyBlue": 18
+          }
+        }
+      },
+      "name": "Gotas",
+      "order": 18.03972473761518
+    },
+    "1ee9e492-12fa-4d9b-a1f5-c2330464bcbc": {
+      "id": "1ee9e492-12fa-4d9b-a1f5-c2330464bcbc",
+      "position": [
+        0.027243027805832654,
+        -0.04690416150864829,
+        0.25979885779324424
+      ],
+      "rotation": [
+        -2.660623932282392e-8,
+        0,
+        0,
+        0.9999999999999997
+      ],
+      "scale": [
+        0.9993293709775836,
+        0.6303899198179488,
+        0.6303899198179488
+      ],
+      "geometry": {
+        "type": "plane",
+        "width": 1,
+        "height": 1
+      },
+      "material": {
+        "type": "basic",
+        "color": "#FFFFFF",
+        "textureSrc": {
+          "type": "asset",
+          "asset": "assets/Videos/hojas_1.mp4"
+        }
+      },
+      "parentId": "3e10c20e-561b-47bd-97ec-5b6c3e9493e2",
+      "components": {
+        "9b6fc10a-598b-40e6-a087-80eb7da9c29b": {
+          "id": "9b6fc10a-598b-40e6-a087-80eb7da9c29b",
+          "name": "Chroma Key",
+          "parameters": {
+            "keyRed": 95,
+            "keyGreen": 180,
+            "keyBlue": 70
+          }
+        }
+      },
+      "name": "Hojita",
+      "order": 19.943689268023896
+    },
+    "61d917f1-a37b-4c39-b785-65b58881c57e": {
+      "id": "61d917f1-a37b-4c39-b785-65b58881c57e",
+      "position": [
+        -1.0690322132056187,
+        -0.7358747819353737,
+        0.24577176365478193
+      ],
+      "rotation": [
+        -2.6606239100779325e-8,
+        0,
+        0,
+        0.9999999999999996
+      ],
+      "scale": [
+        0.8774547450741716,
+        0.5974595063756939,
+        0.5974595063756939
+      ],
+      "geometry": {
+        "type": "plane",
+        "width": 1,
+        "height": 1
+      },
+      "material": {
+        "type": "basic",
+        "color": "#FFFFFF",
+        "textureSrc": {
+          "type": "asset",
+          "asset": "assets/Videos/palmeras.mp4"
+        }
+      },
+      "parentId": "a394779b-415d-432e-9d78-de355ee2a737",
+      "components": {
+        "783b81bb-4cc9-4426-a132-60e505150fc7": {
+          "id": "783b81bb-4cc9-4426-a132-60e505150fc7",
+          "name": "Chroma Key",
+          "parameters": {
+            "keyRed": 125,
+            "keyGreen": 226,
+            "keyBlue": 97
+          }
+        }
+      },
+      "name": "Palmera",
+      "order": 24.553540159683173
+    },
+    "cda0b817-9246-48ad-8133-13b217c3db97": {
+      "id": "cda0b817-9246-48ad-8133-13b217c3db97",
+      "position": [
+        0.03181710508562852,
+        0.03255247457935917,
+        0.05350272984522313
+      ],
+      "rotation": [
+        -2.660623910077932e-8,
+        0,
+        0,
+        0.9999999999999996
+      ],
+      "scale": [
+        0.940440775242959,
+        0.5738705270022536,
+        0.5738705270022536
+      ],
+      "geometry": {
+        "type": "plane",
+        "width": 1,
+        "height": 1
+      },
+      "material": {
+        "type": "basic",
+        "color": "#FFFFFF",
+        "textureSrc": {
+          "type": "asset",
+          "asset": "assets/huellas_1.mp4"
+        }
+      },
+      "parentId": "ba5717ff-9446-4d5f-922b-7465df8da1ef",
+      "components": {
+        "323226f6-95be-4e63-b9bd-b8f236588107": {
+          "id": "323226f6-95be-4e63-b9bd-b8f236588107",
+          "name": "Chroma Key",
+          "parameters": {
+            "keyRed": 120,
+            "keyGreen": 218,
+            "keyBlue": 92
+          }
+        }
+      },
+      "name": "Huellas",
+      "order": 19.4010580285895
+    },
+    "0b3cfe50-745a-4288-a86c-4d195b26f2ea": {
+      "id": "0b3cfe50-745a-4288-a86c-4d195b26f2ea",
+      "position": [
+        -0.01295941806836276,
+        0,
+        -0.013459482256644839
+      ],
+      "rotation": [
+        0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "3e10c20e-561b-47bd-97ec-5b6c3e9493e2",
+      "components": {},
+      "name": "Audio 2",
+      "order": 16.2573001395156,
+      "audio": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/Audios/_pag_2.mp3"
+        },
+        "paused": true
+      }
+    },
+    "8b0b7442-ccdd-4e86-b698-b8a2cef5f15b": {
+      "id": "8b0b7442-ccdd-4e86-b698-b8a2cef5f15b",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "ba5717ff-9446-4d5f-922b-7465df8da1ef",
+      "components": {},
+      "name": "Audio 3",
+      "order": 18.08744471987201,
+      "audio": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/Audios/pag_3.mp3"
+        },
+        "paused": true
+      }
+    },
+    "af27f3d5-7fd2-440c-b5b5-180e93ce9f2c": {
+      "id": "af27f3d5-7fd2-440c-b5b5-180e93ce9f2c",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "4e86bb9c-cd34-431b-a9a3-c501135228c8",
+      "components": {},
+      "name": "Audio 5",
+      "order": 19.30402829412414,
+      "audio": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/Audios/pag_5.mp3"
+        },
+        "paused": true
+      }
+    },
+    "ce429887-889c-44af-b9a6-0a678e13918b": {
+      "id": "ce429887-889c-44af-b9a6-0a678e13918b",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "e8003e6f-6470-4680-9d59-3cf4a1df309c",
+      "components": {},
+      "name": "Audio 6",
+      "order": 21.56098081834164,
+      "audio": {
+        "paused": true,
+        "src": {
+          "type": "asset",
+          "asset": "assets/pag_6.mp3"
+        }
+      }
+    },
+    "fc4ab173-7c03-4cfb-9654-1d6de7d7b0c6": {
+      "id": "fc4ab173-7c03-4cfb-9654-1d6de7d7b0c6",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "a394779b-415d-432e-9d78-de355ee2a737",
+      "components": {},
+      "name": "Audio 7",
+      "order": 23.53148432026868,
+      "audio": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/Audios/pag_7.mp3"
+        },
+        "paused": true
+      }
+    },
+    "ba5717ff-9446-4d5f-922b-7465df8da1ef": {
+      "id": "ba5717ff-9446-4d5f-922b-7465df8da1ef",
+      "position": [
+        -0.00830428772580627,
+        0,
+        -0.6262861113015338
+      ],
+      "rotation": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {
+        "71ce8c91-68da-462a-89df-f725d5840575": {
+          "id": "71ce8c91-68da-462a-89df-f725d5840575",
+          "name": "Image Target Audio",
+          "parameters": {
+            "enabled": true,
+            "audioEntity": {
+              "type": "entity",
+              "id": "8b0b7442-ccdd-4e86-b698-b8a2cef5f15b"
+            },
+            "loop": false,
+            "volume": 1
+          }
+        }
+      },
+      "name": "Doble pagina 3",
+      "imageTarget": {
+        "name": "Compaginado3"
+      },
+      "order": 3.8825434083208514
+    },
+    "4e86bb9c-cd34-431b-a9a3-c501135228c8": {
+      "id": "4e86bb9c-cd34-431b-a9a3-c501135228c8",
+      "position": [
+        1.0698237340345118,
+        -0.05050198254963689,
+        -0.07418981668809443
+      ],
+      "rotation": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {
+        "f657fbd0-3754-4a66-9b6e-2f17496e2f1b": {
+          "id": "f657fbd0-3754-4a66-9b6e-2f17496e2f1b",
+          "name": "Image Target Audio",
+          "parameters": {
+            "audioEntity": {
+              "type": "entity",
+              "id": "af27f3d5-7fd2-440c-b5b5-180e93ce9f2c"
+            },
+            "loop": false,
+            "volume": 1
+          }
+        }
+      },
+      "name": "Doble pagina 5",
+      "imageTarget": {
+        "name": "Compaginado5"
+      },
+      "order": 26.83854531068126
+    },
+    "3b1a6f18-effd-4a1b-b6a8-34a25523074b": {
+      "id": "3b1a6f18-effd-4a1b-b6a8-34a25523074b",
+      "position": [
+        -0.029063263882396995,
+        0,
+        -1.217306548179554
+      ],
+      "rotation": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {
+        "d0557ce2-0bb4-49a3-ae46-8f1ddd21ae5d": {
+          "id": "d0557ce2-0bb4-49a3-ae46-8f1ddd21ae5d",
+          "name": "Image Target Audio",
+          "parameters": {
+            "loop": false,
+            "volume": 1
+          }
+        }
+      },
+      "name": "Doble pagina 1",
+      "imageTarget": {
+        "name": "Compaginado1"
+      },
+      "order": 28.735009952237277
+    },
+    "e8003e6f-6470-4680-9d59-3cf4a1df309c": {
+      "id": "e8003e6f-6470-4680-9d59-3cf4a1df309c",
+      "position": [
+        0.017537154434137725,
+        0,
+        1.520616434834031
+      ],
+      "rotation": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "components": {
+        "61864843-8739-4379-9f20-98c53d30020e": {
+          "id": "61864843-8739-4379-9f20-98c53d30020e",
+          "name": "Image Target Audio",
+          "parameters": {
+            "loop": false,
+            "volume": 1
+          }
+        }
+      },
+      "name": "Doble pagina 6",
+      "imageTarget": {
+        "name": "Compaginado6"
+      },
+      "order": 30.220355829603534,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864"
+    },
+    "a394779b-415d-432e-9d78-de355ee2a737": {
+      "id": "a394779b-415d-432e-9d78-de355ee2a737",
+      "position": [
+        1.0615830083947753,
+        -0.2272449489836736,
+        0.7665589889083322
+      ],
+      "rotation": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "components": {
+        "22fa2849-a696-417b-9b6f-6c2ff0777539": {
+          "id": "22fa2849-a696-417b-9b6f-6c2ff0777539",
+          "name": "Image Target Audio",
+          "parameters": {
+            "audioEntity": {
+              "type": "entity",
+              "id": "fc4ab173-7c03-4cfb-9654-1d6de7d7b0c6"
+            },
+            "loop": false,
+            "volume": 1
+          }
+        }
+      },
+      "name": "Doble pagina 7",
+      "imageTarget": {
+        "name": "Compaginado7"
+      },
+      "order": 32.036550541575544,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864"
+    },
+    "d14793cf-4ae0-4ab3-b3fb-fd45617bccbd": {
+      "id": "d14793cf-4ae0-4ab3-b3fb-fd45617bccbd",
+      "position": [
+        0.029063263882396995,
+        -1.217306548179554,
+        2.7029635156318265e-16
+      ],
+      "rotation": [
+        0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "3b1a6f18-effd-4a1b-b6a8-34a25523074b",
+      "components": {},
+      "name": "Audio 1",
+      "order": 33.97747401969577,
+      "audio": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/pagina_1.mp3"
+        },
+        "paused": true
+      }
+    },
+    "4466ca96-0230-432f-954a-a5ecf71d12b3": {
+      "id": "4466ca96-0230-432f-954a-a5ecf71d12b3",
+      "position": [
+        1.0982839630921037,
+        0.7683363899902856,
+        -0.20163172533814913
+      ],
+      "rotation": [
+        -2.6606239211801618e-8,
+        0,
+        0,
+        0.9999999999999996
+      ],
+      "scale": [
+        0.9911350216286758,
+        0.5786868759174528,
+        0.5786868759174528
+      ],
+      "geometry": {
+        "type": "plane",
+        "width": 1,
+        "height": 1
+      },
+      "material": {
+        "type": "basic",
+        "color": "#FFFFFF",
+        "textureSrc": {
+          "type": "asset",
+          "asset": "assets/Yari-sebastian-brazos.mp4"
+        },
+        "mipmaps": false
+      },
+      "parentId": "e8003e6f-6470-4680-9d59-3cf4a1df309c",
+      "components": {
+        "b90967d5-0aa6-4f76-a2a1-e530a08e0242": {
+          "id": "b90967d5-0aa6-4f76-a2a1-e530a08e0242",
+          "name": "Chroma Key",
+          "parameters": {
+            "keyRed": 38,
+            "keyGreen": 46,
+            "keyBlue": 154,
+            "tolerance": 0.2
+          }
+        }
+      },
+      "name": "Abrazo",
+      "order": 23.09420307453349
+    },
+    "f693e6b0-3948-4963-919b-20f0c3462bf9": {
+      "id": "f693e6b0-3948-4963-919b-20f0c3462bf9",
+      "position": [
+        0.025193274579614622,
+        0.0100762676682212,
+        0.12112764235664353
+      ],
+      "rotation": [
+        -2.8710758659400446e-8,
+        0,
+        0,
+        0.9999999999999996
+      ],
+      "scale": [
+        1.0583096629326454,
+        0.6564690416951436,
+        1.0583097192479272
+      ],
+      "geometry": {
+        "type": "plane",
+        "width": 1,
+        "height": 1
+      },
+      "material": {
+        "type": "basic",
+        "color": "#FFFFFF",
+        "textureSrc": {
+          "type": "asset",
+          "asset": "assets/rana.mp4"
+        },
+        "mipmaps": false
+      },
+      "components": {
+        "b90967d5-0aa6-4f76-a2a1-e530a08e0242": {
+          "id": "b90967d5-0aa6-4f76-a2a1-e530a08e0242",
+          "name": "Chroma Key",
+          "parameters": {
+            "keyRed": 122,
+            "keyGreen": 232,
+            "keyBlue": 78,
+            "tolerance": 0.25
+          }
+        }
+      },
+      "name": "Rana",
+      "order": 20.572284780244864,
+      "parentId": "4e86bb9c-cd34-431b-a9a3-c501135228c8"
+    },
+    "d822e273-85bf-4bbd-be34-ab906f37d15c": {
+      "id": "d822e273-85bf-4bbd-be34-ab906f37d15c",
+      "position": [
+        0.02572362856230781,
+        0.10182368047342283,
+        0.17366748386467953
+      ],
+      "rotation": [
+        -2.6640942785149952e-8,
+        0,
+        0,
+        0.9999999999999997
+      ],
+      "scale": [
+        0.9668398616630395,
+        0.6800844612646585,
+        0.715718116258988
+      ],
+      "geometry": {
+        "type": "plane",
+        "width": 1,
+        "height": 1
+      },
+      "material": {
+        "type": "basic",
+        "color": "#FFFFFF",
+        "textureSrc": {
+          "type": "asset",
+          "asset": "assets/guaca.mp4"
+        },
+        "mipmaps": false
+      },
+      "components": {
+        "b90967d5-0aa6-4f76-a2a1-e530a08e0242": {
+          "id": "b90967d5-0aa6-4f76-a2a1-e530a08e0242",
+          "name": "Chroma Key",
+          "parameters": {
+            "keyRed": 115,
+            "keyGreen": 220,
+            "keyBlue": 72,
+            "tolerance": 0.25
+          }
+        }
+      },
+      "name": "Guacamaya",
+      "order": 20.750221848747376,
+      "parentId": "ba5717ff-9446-4d5f-922b-7465df8da1ef"
+    },
+    "1cb70446-ce6a-4691-a4c7-75a961d32b3f": {
+      "id": "1cb70446-ce6a-4691-a4c7-75a961d32b3f",
+      "position": [
+        0.024347859006671274,
+        0.003532429012907068,
+        0.00849725717362539
+      ],
+      "rotation": [
+        -2.7476937947135144e-8,
+        0,
+        0,
+        0.9999999999999996
+      ],
+      "scale": [
+        0.9414300745582567,
+        0.5807236618516818,
+        0.7495071530578379
+      ],
+      "geometry": {
+        "type": "plane",
+        "width": 1,
+        "height": 1
+      },
+      "material": {
+        "type": "basic",
+        "color": "#FFFFFF",
+        "textureSrc": {
+          "type": "asset",
+          "asset": "assets/peces_saltando.mp4"
+        },
+        "mipmaps": false
+      },
+      "components": {
+        "b90967d5-0aa6-4f76-a2a1-e530a08e0242": {
+          "id": "b90967d5-0aa6-4f76-a2a1-e530a08e0242",
+          "name": "Chroma Key",
+          "parameters": {
+            "keyRed": 39,
+            "keyGreen": 48,
+            "keyBlue": 156,
+            "tolerance": 0.2
+          }
+        }
+      },
+      "name": "peces",
+      "order": 24.321629682269958,
+      "parentId": "e8003e6f-6470-4680-9d59-3cf4a1df309c"
+    },
+    "84dfd8f9-0b7c-466a-b527-20df47c896d1": {
+      "id": "84dfd8f9-0b7c-466a-b527-20df47c896d1",
+      "position": [
+        0.011766270250736732,
+        0.08651259504160613,
+        0.0008672824769211193
+      ],
+      "rotation": [
+        -2.8092853043837365e-8,
+        0,
+        0,
+        0.9999999999999996
+      ],
+      "scale": [
+        1,
+        0.6401189284181091,
+        1.0000000532124804
+      ],
+      "geometry": {
+        "type": "plane",
+        "width": 1,
+        "height": 1
+      },
+      "material": {
+        "type": "basic",
+        "color": "#FFFFFF",
+        "textureSrc": {
+          "type": "asset",
+          "asset": "assets/arpi.mp4"
+        },
+        "mipmaps": false
+      },
+      "components": {
+        "b90967d5-0aa6-4f76-a2a1-e530a08e0242": {
+          "id": "b90967d5-0aa6-4f76-a2a1-e530a08e0242",
+          "name": "Chroma Key",
+          "parameters": {
+            "keyRed": 117,
+            "keyGreen": 223,
+            "keyBlue": 74,
+            "tolerance": 0.25
+          }
+        }
+      },
+      "name": "Aguila",
+      "order": 35.56819186843551,
+      "parentId": "3b1a6f18-effd-4a1b-b6a8-34a25523074b"
+    },
+    "dead195a-a6cf-4a8a-9995-fdbc2a5108d8": {
+      "id": "dead195a-a6cf-4a8a-9995-fdbc2a5108d8",
+      "position": [
+        0.004865482023648227,
+        0.04983843390874067,
+        0.07370832246583169
+      ],
+      "rotation": [
+        -3.0005576912017786e-8,
+        0,
+        0,
+        0.9999999999999996
+      ],
+      "scale": [
+        1,
+        0.6063692561281794,
+        1.0000000532124804
+      ],
+      "geometry": {
+        "type": "plane",
+        "width": 1,
+        "height": 1
+      },
+      "material": {
+        "type": "basic",
+        "color": "#FFFFFF",
+        "textureSrc": {
+          "type": "asset",
+          "asset": "assets/danta.mp4"
+        },
+        "mipmaps": false
+      },
+      "components": {
+        "b90967d5-0aa6-4f76-a2a1-e530a08e0242": {
+          "id": "b90967d5-0aa6-4f76-a2a1-e530a08e0242",
+          "name": "Chroma Key",
+          "parameters": {
+            "keyRed": 117,
+            "keyGreen": 223,
+            "keyBlue": 74,
+            "tolerance": 0.2
+          }
+        }
+      },
+      "name": "danta",
+      "order": 8.740596484851167,
+      "parentId": "f4aa9408-c9ec-471a-873e-b641f9bc1f68"
+    },
+    "7274b49f-b1a4-4fdf-b112-dd2b48ff448c": {
+      "id": "7274b49f-b1a4-4fdf-b112-dd2b48ff448c",
+      "position": [
+        0.027174075003630227,
+        0.0045664017105790655,
+        0.09054504714812375
+      ],
+      "rotation": [
+        -2.666843545995335e-8,
+        0,
+        0,
+        0.9999999999999997
+      ],
+      "scale": [
+        1.082836381284479,
+        0.6437683753744426,
+        0.6893165736137155
+      ],
+      "geometry": {
+        "type": "plane",
+        "width": 1,
+        "height": 1
+      },
+      "material": {
+        "type": "basic",
+        "color": "#FFFFFF",
+        "textureSrc": {
+          "type": "asset",
+          "asset": "assets/frutos_que_crecen.mp4"
+        },
+        "mipmaps": false
+      },
+      "components": {
+        "b90967d5-0aa6-4f76-a2a1-e530a08e0242": {
+          "id": "b90967d5-0aa6-4f76-a2a1-e530a08e0242",
+          "name": "Chroma Key",
+          "parameters": {
+            "keyRed": 42,
+            "keyGreen": 51,
+            "keyBlue": 161,
+            "tolerance": 0.2
+          }
+        }
+      },
+      "name": "mata verde",
+      "order": 22.17908551816042,
+      "parentId": "4e86bb9c-cd34-431b-a9a3-c501135228c8"
     }
   },
   "spaces": {
