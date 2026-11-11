@@ -310,7 +310,11 @@
               "id": "0b3cfe50-745a-4288-a86c-4d195b26f2ea"
             },
             "loop": false,
-            "volume": 1
+            "volume": 1,
+            "imageTarget": {
+              "type": "entity",
+              "id": "3e10c20e-561b-47bd-97ec-5b6c3e9493e2"
+            }
           }
         }
       },
@@ -696,7 +700,11 @@
               "id": "8b0b7442-ccdd-4e86-b698-b8a2cef5f15b"
             },
             "loop": false,
-            "volume": 1
+            "volume": 1,
+            "imageTarget": {
+              "type": "entity",
+              "id": "ba5717ff-9446-4d5f-922b-7465df8da1ef"
+            }
           }
         }
       },
@@ -737,7 +745,11 @@
               "id": "af27f3d5-7fd2-440c-b5b5-180e93ce9f2c"
             },
             "loop": false,
-            "volume": 1
+            "volume": 1,
+            "imageTarget": {
+              "type": "entity",
+              "id": "4e86bb9c-cd34-431b-a9a3-c501135228c8"
+            }
           }
         }
       },
@@ -778,6 +790,10 @@
             "audioEntity": {
               "type": "entity",
               "id": "d14793cf-4ae0-4ab3-b3fb-fd45617bccbd"
+            },
+            "imageTarget": {
+              "type": "entity",
+              "id": "3b1a6f18-effd-4a1b-b6a8-34a25523074b"
             }
           }
         }
@@ -818,6 +834,10 @@
             "audioEntity": {
               "type": "entity",
               "id": "ce429887-889c-44af-b9a6-0a678e13918b"
+            },
+            "imageTarget": {
+              "type": "entity",
+              "id": "e8003e6f-6470-4680-9d59-3cf4a1df309c"
             }
           }
         }
@@ -859,7 +879,11 @@
               "id": "fc4ab173-7c03-4cfb-9654-1d6de7d7b0c6"
             },
             "loop": false,
-            "volume": 1
+            "volume": 1,
+            "imageTarget": {
+              "type": "entity",
+              "id": "a394779b-415d-432e-9d78-de355ee2a737"
+            }
           }
         }
       },
@@ -955,7 +979,7 @@
       "position": [
         0.025193274579614622,
         0.0100762676682212,
-        0.10047902853616153
+        0.08032926579316435
       ],
       "rotation": [
         -2.8710758659400446e-8,
@@ -1038,7 +1062,7 @@
             "keyRed": 115,
             "keyGreen": 220,
             "keyBlue": 72,
-            "tolerance": 0.22
+            "tolerance": 0.21
           }
         }
       },
@@ -1134,7 +1158,7 @@
             "keyRed": 117,
             "keyGreen": 223,
             "keyBlue": 74,
-            "tolerance": 0.22
+            "tolerance": 0.21
           }
         }
       },
